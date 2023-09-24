@@ -24,18 +24,18 @@ const Register = () => {
   const createUser = () => {
     //We shall require Axios to create an API that 
     //connects to the server
-    Axios.post('https://login-backend-six.vercel.app/register',{
+    Axios.post('http://localhost:3001/register',{
       //create variable to send to the server through 
-      Email: email,
-      UserName: userName,
-      Password: password
-    }).then(()=>{
+      email, userName, password
+    }).then(result => {
       console.log('User has been created')
+      console.log(result)
       navigateTo('/')
       setEmail('')
       setUserName('')
       setPassword('')
     })
+    .catch(err => console.log(err))
 
 
   }
@@ -69,7 +69,7 @@ const Register = () => {
           <h3>Nice to meet you!</h3>
         </div>
 
-        <form action="" className='form grid'>
+        <form action="" className='form grid' onSubmit={createUser}>
           <div className="inputDiv">
             <label htmlFor="email">Email</label>
             <div className="input flex">
@@ -106,7 +106,7 @@ const Register = () => {
             </div>
           </div>
 
-          <button type='submit' className='btn flex' onClick={createUser}>
+          <button type='submit' className='btn flex'>
             <span>Register</span>
             <AiOutlineSwapLeft className='icon'></AiOutlineSwapLeft>
           </button> 

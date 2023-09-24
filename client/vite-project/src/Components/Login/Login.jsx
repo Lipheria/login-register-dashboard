@@ -27,19 +27,20 @@ const Login = () => {
     e.preventDefault();
     //We shall require Axios to create an API that 
     //connects to the server
-    Axios.post('https://login-backend-six.vercel.app/login',{
+    Axios.post('http://localhost:3001/login',{
       //create variable to send to the server through 
-      loginUserName: loginuserName,
-      loginPassword: loginPassword
-    }).then((response) => {
-      console.log(response.data.message);
-      if(response.data.message || loginuserName == '' || loginPassword == ''){
+      loginuserName,
+      loginPassword
+    }).then((result) => {
+      console.log(result);
+      if(result.data === "Success"){
         //Credentials dont match
-        navigateTo('/')//to same login page if things don't match
-        setLoginStatus(`Credentials Don't Exist`)
+        navigateTo('/dashboard')//to same login page if things don't match
+        setLoginStatus('Good')
       }
       else{
-        navigateTo('/dashboard')
+        navigateTo('/')
+        setLoginStatus('Credentials not found')
       }
     })
      

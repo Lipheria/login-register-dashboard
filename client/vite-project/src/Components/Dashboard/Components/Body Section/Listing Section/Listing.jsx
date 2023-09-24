@@ -4,6 +4,7 @@ import { AiOutlineArrowRight, AiOutlineHeart } from 'react-icons/ai'
 import img from '../../../../../assets/plant picture.png'
 import user from '../../../../../assets/person1.jpg'
 const Listing = () => {
+
   return (
     <div className="listingSection">
       <div className="heading flex">
@@ -56,9 +57,9 @@ const Listing = () => {
             </div>
             <div className="cardText">
               <span>
-                14.556 Plant sold <br />
+                14,556 Plant(s) sold <br />
                 <small>
-                  21 Sellers <span className='date'>7 Days</span>
+                  21 Sellers <span className='date'><br />7 Days</span>
                 </small>
               </span>
             </div>
@@ -81,9 +82,9 @@ const Listing = () => {
             </div>
             <div className="cardText">
               <span>
-                28,876 Plant sold <br />
+                28,876 Plant(s) sold <br />
                 <small>
-                  21 Sellers <span className='date'>32 Days</span>
+                  21 Sellers <span className='date'><br />32 Days</span>
                 </small>
               </span>
             </div>

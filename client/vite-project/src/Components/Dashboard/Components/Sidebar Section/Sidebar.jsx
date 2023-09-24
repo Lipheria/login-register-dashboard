@@ -8,6 +8,11 @@ import { BiTrendingUp } from 'react-icons/bi'
 
 
 const Sidebar = () => {
+  var buttonStyle = {
+    color: "hsl(240, 1%, 48%)",
+    textAlign: "center",
+    marginBottom: "20px",
+  };
   return (
     <div className="sideBar grid">
       <div className="logoDiv flex">
@@ -93,7 +98,7 @@ const Sidebar = () => {
           </li>
         </ul>
 
-        <a href="/" className="btn">Logout</a>
+        {/* <a href="/" className="btn">Logout</a> */}
       </div>
 
       <div className="sideBarCard">
@@ -106,6 +111,8 @@ const Sidebar = () => {
           <button className='btn'>Go to help center</button>
         </div>
       </div>
+
+      <div className="btn" style={buttonStyle}>Logout</div>
       
     </div>
 
