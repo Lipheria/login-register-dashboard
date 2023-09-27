@@ -31,12 +31,10 @@ const Register = () => {
       }).then(result => {
         console.log('User has been created')
         console.log(result)
-        alert(result)
-  
-        // navigateTo('/')
-        // setEmail('')
-        // setUserName('')
-        // setPassword('')
+        navigateTo('/')
+        setEmail('')
+        setUserName('')
+        setPassword('')
       })
     }catch(error){
       console.log(error)
