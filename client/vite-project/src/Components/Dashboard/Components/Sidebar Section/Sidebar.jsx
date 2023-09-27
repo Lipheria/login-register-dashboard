@@ -111,8 +111,8 @@ const Sidebar = () => {
           <button className='btn'>Go to help center</button>
         </div>
       </div>
-
-      <div className="btn" style={buttonStyle}>Logout</div>
+      <a href="/" className="btn" style={buttonStyle}>Logout</a>
+      {/* <div className="btn" style={buttonStyle}>Logout</div> */}
       
     </div>
 

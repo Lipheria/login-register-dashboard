@@ -21,23 +21,29 @@ const Register = () => {
 
 
   //Onclick to let us get what the user has entered
-  const createUser = () => {
+  const createUser = async () => {
     //We shall require Axios to create an API that 
     //connects to the server
-    Axios.post('http://localhost:3001/register',{
-      //create variable to send to the server through 
-      email, userName, password
-    }).then(result => {
-      console.log('User has been created')
-      console.log(result)
-      navigateTo('/')
-      setEmail('')
-      setUserName('')
-      setPassword('')
-    })
-    .catch(err => console.log(err))
-
-
+    try{
+      await Axios.post('https://login-backend-mongo.vercel.app/register',{
+        //create variable to send to the server through 
+        email, userName, password
+      }).then(result => {
+        console.log('User has been created')
+        console.log(result)
+        alert(result)
+  
+        // navigateTo('/')
+        // setEmail('')
+        // setUserName('')
+        // setPassword('')
+      })
+    }catch(error){
+      console.log(error)
+      alert(error)
+    }
+  
+   
   }
 
   return (
@@ -69,7 +75,7 @@ const Register = () => {
           <h3>Nice to meet you!</h3>
         </div>
 
-        <form action="" className='form grid' onSubmit={createUser}>
+        <form action="" className='form grid'>
           <div className="inputDiv">
             <label htmlFor="email">Email</label>
             <div className="input flex">
@@ -106,7 +112,7 @@ const Register = () => {
             </div>
           </div>
 
-          <button type='submit' className='btn flex'>
+          <button type='submit' className='btn flex' onClick={createUser}>
             <span>Register</span>
             <AiOutlineSwapLeft className='icon'></AiOutlineSwapLeft>
           </button> 
