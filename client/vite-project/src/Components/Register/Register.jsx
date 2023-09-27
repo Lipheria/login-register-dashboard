@@ -21,7 +21,8 @@ const Register = () => {
 
 
   //Onclick to let us get what the user has entered
-  const createUser = async () => {
+  const createUser = async (e) => {
+    e.preventDefault()
     //We shall require Axios to create an API that 
     //connects to the server
     try{
